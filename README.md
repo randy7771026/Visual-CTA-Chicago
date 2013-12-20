@@ -5,11 +5,11 @@ To allow CTA users to better get around Chicagoland by first taking a virtual tr
 
 So, what are the pieces of this project as prose beginning at the level of a person who has what are considered normal abilities but wants to experiance their trip virtually before attempting it more physically.
 
-The first piece is a CTA tracker and trip planner program.
-
 To begin with I should say I hope to see this on at least four levels of the two major web app levels as well as web app levels for mobile and as apps for Android and IOS.
 
-This part exist as amny CTA tracker apps and trip planners including Tom Kompar's open appication:
+The first piece is a CTA tracker and trip planner program.
+
+This part exist as many CTA tracker apps and trip planners including Tom Kompar's open appication:
 
 http://cps.go2school.org/
 
