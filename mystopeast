@@ -1,0 +1,85 @@
+import urllib
+# Change route to be your bus number
+u = urllib.urlopen('http://ctabustracker.com/bustime/map/getBusesForRoute.jsp?route=80')
+data = u.read()
+f = open('rt80.xml', 'wb')
+f.write(data)
+f.close()
+
+# find_north.py
+#
+# Find all buses that are traveling northbound of
+# Dave's office
+
+my_latitude = 41.953394
+my_longitude = -87.749884
+
+from xml.etree.ElementTree import parse
+doc = parse('rt80.xml')
+candidates =[]
+
+for bus in doc.findall('bus'):
+#    lat = float(bus.findtext('lat'))
+    lon = float(bus.findtext('lon'))
+# > says that bus is North of my location
+# > says that bus is East of my location maybe
+# < says that bus is West of my location maybe
+#    if lat > my_latitude:
+    if lon < my_longitude:
+        direction = bus.findtext('d')
+        busid = bus.findtext('id')
+        candidates = candidates + [ busid ]
+#        print candidate
+        print busid, lon
+print candidates
+
+# monitor.py
+
+import urllib
+from xml.etree.ElementTree import parse
+
+# candidates = [ '1867', '1328', '1379' ]
+#daves_latitude = 41.980262
+
+def distance(lat1, lat2):
+    'Return distance in miles between two lats'
+    return 60*abs(lat1 - lat2)
+
+def monitor():
+    u = urllib.urlopen('http://ctabustracker.com/bustime/map/getBusesForRoute.jsp?route=80')
+    doc = parse(u)
+    p = urllib.urlopen('http://chicago.transitapi.com/bustime/map/getStopPredictions.jsp?stop=5629&route=80')
+    pdoc = parse(p)
+    for pre in pdoc.findall('pre'):
+        vid = pre.findtext('v')
+        eta = pre.findtext('pt')
+        print 'Bus number ', vid, 'will arrive in ', eta
+        print '---'
+                           
+    ctime = doc.findtext('time')
+#        ctime = buses.findtext('time')
+
+
+    print 'Time   ', ctime
+    for bus in doc.findall('bus'):
+        busid = bus.findtext('id')
+        if busid in candidates:
+            lon = float(bus.findtext('lon'))
+#            lat = float(bus.findtext('lat'))
+            dis = distance(lon, my_longitude)
+            direction = bus.findtext('d')
+            if direction == 'East Bound' and lon < my_longitude:
+                print '****', busid, dis, 'miles Headed ', direction, busid
+                if dis < 0.75:
+                    print 'YYYYYYYYYYYYYYYIIIIPPPPPPPPPPPEEEEEEEE  '*4, busid
+                   
+#            else:
+#                print busid, dis, 'miles Headed ', direction
+                
+    print '_'*10
+import time
+count = 0
+while count < 60 :
+    monitor()
+    count = count + 1
+    time.sleep(60)
