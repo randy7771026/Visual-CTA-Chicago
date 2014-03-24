@@ -1,0 +1,23 @@
+import urllib
+
+from xml.etree.ElementTree import parse
+
+
+def monitor():
+   
+    p = urllib.urlopen('http://chicago.transitapi.com/bustime/map/getStopPredictions.jsp?stop=5623&route=80')
+    pdoc = parse(p)
+    for pre in pdoc.findall('pre'):
+        vid = pre.findtext('v')
+        eta = pre.findtext('pt')
+        print 'Bus number ', vid, 'will arrive in ', eta
+        print '---'
+                           
+
+    print '_'*10
+import time
+count = 0
+while count < 60 :
+    monitor()
+    count = count + 1
+    time.sleep(60)
