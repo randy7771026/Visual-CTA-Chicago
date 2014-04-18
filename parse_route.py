@@ -51,7 +51,9 @@ from xml.etree.ElementTree import parse
 
 
 def distance(lat1, lat2):
-    '''Return distance in miles between two lats'''
+    """
+    Return distance in miles between two lats
+    """
     return 60*abs(lat1 - lat2)
 
 # This may not change as often as we would like but I am running with it for now since it seems to give me the routes
@@ -117,10 +119,11 @@ docs = parse(s)
 
 pa_elements = docs.findall('.//pa')
 for pa in pa_elements:
-    rection = bus.findtext('d')
-    print 'rection', rection, 'pd', pd
-    if rection == pd:
-        for bs in docs.findall('bs'):
-            stop = bus.findtext('id')
+    rection = pa.findtext('.//d')
+    print 'rection', rection, 'pd', god[go]
+    if rection == god[go]:
+        bs_elements = pa.findall('.//bs')
+        for bs in bs_elements:
+            stop = bs.findtext('.//id')
             print stop
 #            dis = distance(lon, my_longitude)
