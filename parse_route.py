@@ -115,7 +115,8 @@ s = urllib2.urlopen(call)
 # s = urllib2.urlopen(' http://chicago.transitapi.com/bustime/map/getRoutePoints.jsp?route=80')
 docs = parse(s)
 
-for pa in docs.findall('pa'):
+pa_elements = docs.findall('.//pa')
+for pa in pa_elements:
     rection = bus.findtext('d')
     print 'rection', rection, 'pd', pd
     if rection == pd:
