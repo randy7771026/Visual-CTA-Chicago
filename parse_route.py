@@ -6,10 +6,11 @@ import urllib2
 import math
 
 
-god = {'n':'Northbound', 's':'Southbound','e':'Eastbound','w':'Westbound'}
+god = {'n': 'Northbound', 's': 'Southbound', 'e': 'Eastbound', 'w': 'Westbound'}
 
-go = raw_input( 'Input n, s, e or w and press Enter >>> ' )
+go = raw_input('Input n, s, e or w and press Enter >>> ')
 #   print god[go]
+
 
 def distance_on_unit_sphere(lat1, long1, lat2, long2):
 
@@ -35,7 +36,7 @@ def distance_on_unit_sphere(lat1, long1, lat2, long2):
 
     cos = (math.sin(phi1)*math.sin(phi2)*math.cos(theta1 - theta2) +
            math.cos(phi1)*math.cos(phi2))
-    arc = math.acos( cos )
+    arc = math.acos(cos)
 
     # Remember to multiply arc by the radius of the earth
     # in your favorite set of units to get length.
@@ -48,8 +49,9 @@ my_longitude = -87.749884
 
 from xml.etree.ElementTree import parse
 
+
 def distance(lat1, lat2):
-    'Return distance in miles between two lats'
+    '''Return distance in miles between two lats'''
     return 60*abs(lat1 - lat2)
 
 # This may not change as often as we would like but I am running with it for now since it seems to give me the routes
@@ -89,11 +91,11 @@ for bus in doc.findall('bus'):
         if god[go] == pd:
 #           print 'match for ', pd
             if rt not in routes:
-                routes = routes + [ rt ]
+                routes = routes + [rt]
 
 print 'routes ', routes, 'headed ', god[go]
 
-gort = raw_input( 'Enter route and press Enter >>> ' )
+gort = raw_input('Enter route and press Enter >>> ')
 
 # will need to verify route entered correctly
 # get stops for routes saved
@@ -102,8 +104,6 @@ gort = raw_input( 'Enter route and press Enter >>> ' )
 
 # http://chicago.transitapi.com/bustime/map/getRoutePoints.jsp?route=80
 # u = urllib.urlclose('http://chicago.transitapi.com/bustime/map/getBusesForRouteAll.jsp')
-call = ''
-
 call = 'http://chicago.transitapi.com/bustime/map/getRoutePoints.jsp?route='
 
 call = "'" + call + gort + "'"
@@ -123,16 +123,7 @@ for pa in docs.findall('pa'):
     rection = bus.findtext('d')
     print 'rection', rection, 'pd', pd
     if rection == pd:
-	for bs in docs.findall('bs'):
-	    stop = bus.findtext('id')
-	    print stop
-
-
-
-#
-#
-#
-
-
-
+        for bs in docs.findall('bs'):
+            stop = bus.findtext('id')
+            print stop
 #            dis = distance(lon, my_longitude)
