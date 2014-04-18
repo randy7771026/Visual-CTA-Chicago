@@ -103,21 +103,17 @@ gort = raw_input('Enter route and press Enter >>> ')
 # and find the ones closest in the direction you want to go.
 
 # http://chicago.transitapi.com/bustime/map/getRoutePoints.jsp?route=80
-# u = urllib.urlclose('http://chicago.transitapi.com/bustime/map/getBusesForRouteAll.jsp')
 call = 'http://chicago.transitapi.com/bustime/map/getRoutePoints.jsp?route='
 
-call = "'" + call + gort + "'"
+call = call + gort
 
 print call
 
 # url has been built but will not open
 
-# s = urllib2.urlopen(call)
-s = urllib2.urlopen(' http://chicago.transitapi.com/bustime/map/getRoutePoints.jsp?route=80')
+s = urllib2.urlopen(call)
+# s = urllib2.urlopen(' http://chicago.transitapi.com/bustime/map/getRoutePoints.jsp?route=80')
 docs = parse(s)
-
-routes = []
-
 
 for pa in docs.findall('pa'):
     rection = bus.findtext('d')
