@@ -5,7 +5,11 @@ import urllib2
 
 import math
 
+
+god = {'n':'Northbound', 's':'Southbound','e':'Eastbound','w':'Westbound'}
+
 go = raw_input( 'Input n, s, e or w and press Enter >>> ' )
+#   print god[go]
 
 def distance_on_unit_sphere(lat1, long1, lat2, long2):
 
@@ -75,10 +79,6 @@ for bus in doc.findall('bus'):
 # If lat dist and lon dist less than 1.0 miles
 # get route
 # save route if not saved
-
-
-    god = {'n':'Northbound', 's':'Southbound','e':'Eastbound','w':'Westbound'}
-#   print god[go]
 
     rarc = distance_on_unit_sphere(my_latitude, my_longitude, flat, flon)
     miles = rarc * 3960.0
