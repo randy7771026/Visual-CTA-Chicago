@@ -28,3 +28,5 @@ Going farther.
 Some people will need to use elevators and/or escalators.  It would be great to know as soon as possible if these are not available because they do not exist, they only go down or up or they are not working.
 
 A continued use of this platform would be to integrate many sources including social media, HR sites and IDES to connect people with available work matching up with their skills along these virtual and real trips.
+
+The word visual in the title of this project might better be virtual and the acronymn CTA might want to be extended to include public and shared transportation as well as personal mobility access solutions.  This should include the various disembarkment methods from transport to the next stage of access and on into the building or other space that we wish to enter.
