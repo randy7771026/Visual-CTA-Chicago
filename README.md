@@ -1,7 +1,7 @@
 Visual-CTA-Chicago
 ==================
 
-To allow CTA users to better get around Chicagoland by first taking a virtual trip on the CTA.  People new to the city or visiting, those of us with a few more years on us and very importantly those who are covered by various ADA designations could benefit by something similar to a CTA Tracker but which incorporates video to give us a preview when we will be traveling on the CTA.  Plan as of 12/18/2013 is to begin with a proof of concept using the Brown Line.
+To allow CTA users to better get around Chicagoland by first taking a virtual trip on the CTA.  People new to the city or visiting, those of us with a few more years on us and very importantly those who are covered by various ADA designations could benefit by something similar to a CTA Tracker but which incorporates video to give us a preview when we will be traveling on the CTA.  Plan as of 12/18/2013 is to begin with a proof of concept using a personal trip and the components used which would include leaving one location by our individual methods, proceeding along one or more public and shared transportations to a commercial, public or government space then the return trip.
 
 So, what are the pieces of this project as prose beginning at the level of a person who has what are considered normal abilities but wants to experiance their trip virtually before attempting it more physically.
 
