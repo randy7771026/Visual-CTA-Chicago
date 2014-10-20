@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Simple Bus Tracker</title>
+</head>
+<body>
+<h1>Simple Bus Tracker</h1>
+<script>
+    console.log("I am here");
+    // Try HTML5 geolocation
+  if(navigator.geolocation) {
+
+     navigator.geolocation.getCurrentPosition(
+         function(position) {
+           curLat = position.coords.latitude;
+           curLong = position.coords.longitude;
+           console.log("curLat = "+ curLat + " curLong = "+ curLong + " now");
+           });
+  }
+
+
+</script>
+</body>
+</html>
