@@ -29,4 +29,18 @@ Some people will need to use elevators and/or escalators.  It would be great to 
 
 A continued use of this platform would be to integrate many sources including social media, HR sites and IDES to connect people with available work matching up with their skills along these virtual and real trips.
 
+Update:
+
+Though not really from a riders view there are now videos of the "L" lines in:
+
+"real time"
+
+https://www.youtube.com/watch?v=UQ7oTzKTJpY&list=PL0-sTc_CuqtXDvfQIx_Za5kG8nB4nz8FU 
+
+and time lapse:
+
+https://www.youtube.com/watch?v=NPeco8tW7Tc&list=PL0-sTc_CuqtXb9OKM-FH2_sIMSmtXMeAC
+
+
+
 The word visual in the title of this project might better be virtual and the acronymn CTA might want to be extended to include public and shared transportation as well as personal mobility access solutions.  This should include the various disembarkment methods from transport to the next stage of access and on into the building or other space that we wish to enter.
